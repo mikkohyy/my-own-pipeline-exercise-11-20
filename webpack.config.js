@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: './frontend/src/index.js',
@@ -26,7 +27,12 @@ const config = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './frontend/public/index.html'
+    })
+  ]
 }
 
 module.exports = config
