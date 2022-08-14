@@ -15,7 +15,7 @@ const App = () => {
   const [successfulOperation, setSuccessfulOperation] = useState(null)
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     blogService.getAll().then(blogs =>

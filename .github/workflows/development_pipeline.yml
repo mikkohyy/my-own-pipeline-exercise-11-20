@@ -13,9 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Pre install
-        run: ls
-      - name: install
+      - name: npm install
         run: npm install
-      - name: Post install
-        run: ls
+      - name: lint
+        run: npm run lint
