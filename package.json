@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "My own pipeline",
   "scripts": {
-    "build": "webpack --mode=development"
+    "build": "webpack --mode=development",
+    "start": "webpack serve --mode=development"
   },
   "license": "MIT",
   "devDependencies": {
