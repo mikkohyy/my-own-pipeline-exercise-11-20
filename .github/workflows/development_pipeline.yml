@@ -1,4 +1,4 @@
-name: Hello World!
+name: Development pipeline
 
 on:
   push:
@@ -6,9 +6,16 @@ on:
       - main
 
 jobs:
-  hello_world_job:
+  development_pipeline:
     runs-on: ubuntu-20.04
     steps:
-      - name: Say hello
-        run: |
-          echo "Hello World!"
+      - uses: actions/checkout@v3
+      - uses: action/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Pre install
+        run: ls
+      - name: install
+        run: npm install
+      - name: Post install
+        run: ls
