@@ -1,2 +1,4 @@
+.env
+*.rest
 build/
 node_modules/
