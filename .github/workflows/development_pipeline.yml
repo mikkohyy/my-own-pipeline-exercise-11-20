@@ -19,3 +19,9 @@ jobs:
         run: npm run lint
       - name: build
         run: npm run build
+      - name: deploy to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: powerful-fjord-16110
+          heroku_email: mikko.e.hyyrylainen@gmail.com
