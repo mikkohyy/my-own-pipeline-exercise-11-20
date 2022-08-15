@@ -30,12 +30,12 @@ jobs:
           NODE_ENV: "test"
           TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           SECRET: ${{ secrets.SECRET }}
-          PORT: 3003
+          PORT: ${{ secrets.PORT }}
         uses: cypress-io/github-action@v4
         with:
           command: npm run test:e2e
           start: npm run start:test
-          wait-on: http://localhost:3003
+          wait-on: http://localhost:${{secrets.PORT}}
       - name: deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
