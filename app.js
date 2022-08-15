@@ -27,6 +27,10 @@ app.use(morgan(':method :url :status :response-time ms :res[content-length] :req
 app.use(middleware.tokenExtractor)
 app.use(express.static('build'))
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
