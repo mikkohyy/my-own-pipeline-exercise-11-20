@@ -20,7 +20,7 @@ jobs:
       - name: jest tests
         env: 
           NODE_ENV: "test"
-          TEST_MONGODB_URI: ${{ sercrets.TEST_MONGODB_URI }}
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
         run: npm run test:jest
       - name: build
         run: npm run build
