@@ -28,7 +28,7 @@ jobs:
           NODE_ENV: "test"
           TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           SECRET: ${{ secrets.SECRET }}
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           command: npm run test:e2e
           start: npm run start:test
