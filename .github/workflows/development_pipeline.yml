@@ -44,4 +44,4 @@ jobs:
           heroku_email: mikko.e.hyyrylainen@gmail.com
           healthcheck: https://powerful-fjord-16110.herokuapp.com/health
           checkstring: "ok"
-          #rollbackonhealthcheckfailed: true
+          rollbackonhealthcheckfailed: true
