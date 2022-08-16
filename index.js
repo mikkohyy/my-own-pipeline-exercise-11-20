@@ -3,7 +3,7 @@ const app = require('./app')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 
-// anoter new change
+// another new change
 
 const server = http.createServer(app)
 
