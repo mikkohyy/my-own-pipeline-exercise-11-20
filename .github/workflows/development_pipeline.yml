@@ -39,7 +39,7 @@ jobs:
           command: npm run test:e2e
           start: npm run start:test
           wait-on: http://localhost:${{secrets.PORT}}
-      - if: ${{ github.event_name == 'push' }}
+      - if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
         name: deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
