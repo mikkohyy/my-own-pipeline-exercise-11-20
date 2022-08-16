@@ -57,9 +57,9 @@ tag_release:
     - uses: actions/checkout@v2
     with:
       fetch-depth: '0'
-  - if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
-    name: Update version
-    uses: anothrNick/github-tag-action@1.36.0
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      DEFAULT_BUMP: patch
+    - if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+      name: Update version
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEFAULT_BUMP: patch
